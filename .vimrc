@@ -86,7 +86,19 @@ imap jj <Esc>
  
 " Sets path to directory buffer was loaded from
 "autocmd BufEnter * lcd %:p:h
+
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+autocmd BufReadPost *
+	\ if line("'\"") > 0 && line("'\"") <= line("$") |
+	\   exe "normal! g`\"" |
+	\ endif
  
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+                 \ | wincmd p | diffthis
  
 " File Stuff ******************************************************************
 filetype plugin indent on
