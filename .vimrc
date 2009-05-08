@@ -4,6 +4,8 @@
 " -----------------------------------------------------------------------------  
  
 set nocompatible
+" set list	" display can't see characters
+" set fileformat?	" display file format for CR, LF
 
 " History ********************************************************************
 set history=50
