@@ -235,7 +235,7 @@ nnoremap <silent> <F6> :TlistToggle<CR>
  
 " Fuzzyfinder *****************************************************************
 " Fuzzy finder rocks, like Command-T in TextMate (buggy at moment, fix!!)
-let g:FuzzyFinderOptions = { 'Base':{}, 'Buffer':{}, 'File':{}, 'MruFile':{}, 'FavFile':{}, 'Dir':{}, 'Tag':{}, 'TaggedFile':{}}
+let g:FuzzyFinderOptions = { 'Base':{}, 'Buffer':{}, 'File':{}, 'MruFile':{}, 'Dir':{}, 'Tag':{}, 'TaggedFile':{}}
 let g:FuzzyFinderOptions.Base.ignore_case = 1
 let g:FuzzyFinderOptions.Base.abbrev_map = { "^Project-" : ["**/"], }
 let g:FuzzyFinderOptions.Base.migemo_support = 0
@@ -256,6 +256,11 @@ let g:AutoComplPop_BehaviorKeywordLength = 2
  
 " a.vim **********************************************************************
 let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../../head/core'
+
+" minibufexpl ****************************************************************
+let g:miniBufExplSplitBelow = 0 " mini buf window will apear above.
+let g:miniBufExplMapCTabSwitchBufs = 1 " use C-Tab and C-S-Tab to switch bufs.
+let g:miniBufExplModSelTarget = 1 " Don't put buf in nonmodifiable window.
  
 " -----------------------------------------------------------------------------  
 " |                             OS Specific                                   |
