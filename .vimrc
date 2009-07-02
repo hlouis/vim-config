@@ -56,7 +56,8 @@ map! <F2> <Esc>:nohlsearch<cr>i
 "set t_Co=256 " 256 colors
 set background=dark 
 syntax on " syntax highlighting
-colorscheme ir_black
+" colorscheme ir_black
+colorscheme desert 
  
  
 " Status Line *****************************************************************
