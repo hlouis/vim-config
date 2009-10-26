@@ -17,6 +17,7 @@ set tabstop=4
 set noexpandtab
 set sta " a <Tab> in an indent inserts 'shiftwidth' spaces
  
+set path=.,/usr/include,../include,,
  
 " Indenting ********************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
@@ -262,6 +263,8 @@ let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,
 let g:miniBufExplSplitBelow = 0 " mini buf window will apear above.
 let g:miniBufExplMapCTabSwitchBufs = 1 " use C-Tab and C-S-Tab to switch bufs.
 let g:miniBufExplModSelTarget = 1 " Don't put buf in nonmodifiable window.
+let g:miniBufExplMinSize = 1 " at least display 1 line.
+let g:miniBufExplMaxSize = 2 " max display 2 line.
  
 " -----------------------------------------------------------------------------  
 " |                             OS Specific                                   |
