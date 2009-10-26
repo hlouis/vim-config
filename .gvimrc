@@ -23,6 +23,8 @@ elseif has("gui_gtk2")
 elseif has("x11")
 elseif has("gui_win32")
     set guifont=Envy_Code_R:h10
+"    set guifont=YaHei_Consolas_Hybrid:h10
+	color northland
 end
 
 " General *********************************************************************

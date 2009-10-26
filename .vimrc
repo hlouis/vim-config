@@ -278,6 +278,6 @@ let g:miniBufExplMaxSize = 2 " max display 2 line.
  
 " Windows *********************************************************************
 "if has("gui_win32")
-  "" 
+  set path=.,,head,include
 "endif
  
