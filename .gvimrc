@@ -13,10 +13,11 @@ if has("gui_macvim")
 
 elseif has("gui_gtk2")
 
-  set guifont=Droid\ Sans\ Mono\ 10
-" set guifont=Envy\ Code\ R\ 10
+" set guifont=Droid\ Sans\ Mono\ 10
+  set guifont=Envy\ Code\ R\ 10
 "  set guifont=Monaco\ 10
-  color ir_black
+"  color ir_black
+  color northland
   set guioptions-=T  " remove toolbar
 
 elseif has("x11")
