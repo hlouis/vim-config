@@ -29,6 +29,18 @@ snippet once
 	${2}
 	
 	#endif /* end of include guard: $1 */
+# Starndard doxygen comment
+snippet /**
+	/**
+	 * ${1}
+	 */
+	${2:/* next */}
+# Segmentation comment
+snippet //*
+	/**************************************************************************
+	// ${1}
+	**************************************************************************/
+	${2:/* next */}
 # If Condition
 snippet if
 	if (${1:/* condition */}) {
