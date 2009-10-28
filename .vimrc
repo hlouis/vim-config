@@ -253,12 +253,9 @@ map ,m :FuzzyFinderMruFile!<CR>
  
  
 " autocomplpop ***************************************************************
-" complete option
-"set complete=.,w,b,u,t,k
-"let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k'
-"set complete=.
-let g:AutoComplPop_IgnoreCaseOption = 1
-let g:AutoComplPop_BehaviorKeywordLength = 2
+let g:acp_enableAtStartup = 1
+let g:acp_ignorecaseOption = 1
+let g:acp_mappingDriven = 1
  
 " a.vim **********************************************************************
 let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../../head/core'
