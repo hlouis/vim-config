@@ -229,6 +229,10 @@ nnoremap <silent> <F6> :TlistToggle<CR>
 "let g:snip_elem_delim = ":"
 "let g:snip_set_textmate_cp = '1'  " Tab to expand snippets, not automatically.
  
+" Snip Mate **************************************************************
+let g:snips_author = "Louis Huang"
+let g:snips_company = "YQIdea"
+let g:snips_email = "louis.huang@yqidea.com"
  
 " fuzzyfinder_textmate *****************************************************************
 "map ,f :FuzzyFinderTextMate<CR>
