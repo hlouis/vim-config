@@ -108,6 +108,7 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 filetype plugin indent on
 " To show current filetype use: set filetype
 autocmd FileType html :set filetype=xhtml " we couldn't care less about html
+autocmd BufNewFile,BufRead *.as :set filetype=actionscript " change as from altas to actionscript.
  
  
 " Inser New Line **************************************************************
