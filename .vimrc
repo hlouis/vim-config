@@ -161,7 +161,7 @@ map <C-C> <C-W>c
 " Encodings ******************************************************************
 " Set utf-8 is the default encoding
 set fileencoding=utf-8
-set fileencodings=utf-8,gbk,gb2312,latin1,default
+set fileencodings=ucs-bom,utf-8,gbk,gb2312,latin1,default
 
 " Quick Fix window ***********************************************************
 map <C-N> :cn<cr>
