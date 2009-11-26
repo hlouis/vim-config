@@ -19,6 +19,7 @@ elseif has("gui_gtk2")
 "  color ir_black
   color northland
   set guioptions-=T  " remove toolbar
+  let &guifont=&guifont	" Fix mouse cursor hide bug
 
 elseif has("x11")
 elseif has("gui_win32")
