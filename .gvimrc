@@ -17,7 +17,8 @@ elseif has("gui_gtk2")
   set guifont=Envy\ Code\ R\ 10
 "  set guifont=Monaco\ 10
 "  color ir_black
-  color northland
+"  color northland
+  color inkpot
   set guioptions-=T  " remove toolbar
   let &guifont=&guifont	" Fix mouse cursor hide bug
 
