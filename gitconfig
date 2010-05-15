@@ -1,0 +1,27 @@
+[core]
+	autocrlf = false
+	editor = gvim
+	quotepath = false
+[color]
+	ui = auto
+[user]
+	name = Louis Huang
+	email = louis.huang@yqidea.com
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	cm = commit -m 
+	cam = commit -am 
+[guitool "Revert selected file"]
+	cmd = git checkout $FILENAME
+	needsfile = yes
+	confirm = yes
+	noconsole = yes
+[guitool "Delete selected file"]
+	cmd = rm $FILENAME
+	confirm = yes
+[merge]
+	tool = gvimdiff
+[difftool "gvimdiff"]
+	cmd = vimdiffwrapper.sh
