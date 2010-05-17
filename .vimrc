@@ -109,6 +109,7 @@ filetype plugin indent on
 " To show current filetype use: set filetype
 autocmd FileType html :set filetype=xhtml " we couldn't care less about html
 autocmd BufNewFile,BufRead *.as :set filetype=actionscript " change as from altas to actionscript.
+autocmd BufNewFile,BufRead *.dox :set filetype=doxygen " define dox file as doxygen file
  
  
 " Inser New Line **************************************************************
