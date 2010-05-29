@@ -20,10 +20,11 @@ snippet ns
 	} /* $1 */
 # Class
 snippet cl
-	class ${1:`Filename('$1_t', 'name')`} {
+	class ${1:`Filename('$1_t', 'name')`}
+	{
 	public:
-		$1 (${2:arguments});
-		virtual ~$1 ();
+		$1(${2:arguments});
+		virtual ~$1();
 	
 	private:
 		${3:/* data */}
