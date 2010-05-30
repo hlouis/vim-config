@@ -632,3 +632,6 @@ let g:miniBufExplModSelTarget = 1 " Don't put buf in nonmodifiable window.
 let g:miniBufExplMinSize = 1 " at least display 1 line.
 let g:miniBufExplMaxSize = 2 " max display 2 line.
 
+" surround   ****************************************************************
+" http://www.vim.org/scripts/script.php?script_id=1697
+" ver: 1.90
