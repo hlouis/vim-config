@@ -77,6 +77,12 @@ set mouse=a " Enable the mouse
 behave xterm
 set selectmode=mouse
 
+" Default size of window
+if has("gui_running")
+	set columns=120
+	set lines=45
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
