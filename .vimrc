@@ -214,7 +214,6 @@ vnoremap <silent> # :call VisualSearch('b')<CR>
 vnoremap <silent> gv :call VisualSearch('gv')<CR>
 map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
 
-
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
@@ -583,7 +582,7 @@ let g:EnhCommentifyPretty = 'Yes'
 " ver 4.1.0
 let g:NERDTreeIgnore=['\~$', '\.o$', 'tags', 'cscope\.']
 let g:NERDTreeWinPos="left"
-nnoremap <silent> <F5> :NERDTreeToggle<CR>
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 
 " Tag List ********************************************************************
 " http://www.vim.org/scripts/script.php?script_id=273
