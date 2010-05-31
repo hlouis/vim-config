@@ -65,7 +65,7 @@ endif
 
 " When vimrc is edited, reload it
 if g:isWin == 1
-	autocmd! bufwritepost .vimrc source d:\develop\Vim\vimfiles\.vimrc
+	autocmd! bufwritepost .vimrc source $VIM/vimfiles/.vimrc
 else
 	autocmd! bufwritepost .vimrc source ~/.vim/.vimrc
 endif
@@ -131,7 +131,7 @@ if MySys() == "mac"
 elseif MySys() == "windows"
   set gfn=Envy_Code_R:h10
 elseif MySys() == "linux"
-  set gfn=Monospace\ 10
+  set gfn=Envy\ Code\ R\ 10
   set shell=/bin/bash
 endif
 
@@ -143,7 +143,7 @@ if has("gui_running")
   colorscheme inkpot
   set nu
 else
-  colorscheme dsert
+  colorscheme desert
   set background=dark
   set nonu
 endif
