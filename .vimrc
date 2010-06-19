@@ -165,6 +165,8 @@ endtry
 
 set ffs=unix,dos,mac "Default file types
 
+"Change current buffer encoding to cp936 (default is utf-8)
+nmap <leader>fcn :set fileencoding=cp936<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files and backups
@@ -609,6 +611,19 @@ nnoremap <silent> <F6> :TlistToggle<CR>
 let g:snips_author = "Louis Huang"
 let g:snips_company = "YQIdea"
 let g:snips_email = "louis.huang@yqidea.com"
+
+function! ReloadSnippets( snippets_dir, ft )
+    if strlen( a:ft ) == 0
+        let filetype = "_"
+    else
+        let filetype = a:ft
+    endif
+
+    call ResetSnippets()
+    call GetSnippets( a:snippets_dir, filetype )
+endfunction
+
+nmap <silent> <leader>sr :call ReloadSnippets(snippets_dir, &filetype)<CR>
  
 " Fuzzyfinder *****************************************************************
 " http://www.vim.org/scripts/script.php?script_id=1984

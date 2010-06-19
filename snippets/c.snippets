@@ -36,8 +36,9 @@ snippet #if
 # Header Include-Guard
 # (the randomizer code is taken directly from TextMate; it could probably be
 # cleaner, I don't know how to do it in vim script)
+#	#ifndef ${1:`toupper(Filename('', 'UNTITLED').'_')`}
 snippet once
-	#ifndef ${1:`toupper(Filename('', 'UNTITLED').'_')`}
+	#ifndef ${1:`Filename('', 'UNTITLED').'_h__'`}
 	#define $1
 
 	${2}
@@ -55,6 +56,10 @@ snippet //*
 	 * ${1}
 	 *************************************************************************/
 	${2:/* next */}
+# Divider comment
+snippet //-
+	//-----------------------------------------------------------------------//
+	${1}
 # If Condition
 snippet if
 	if (${1:/* condition */}) {
@@ -129,6 +134,6 @@ snippet pr
 snippet fpr
 	fprintf(${1:stderr}, "${2:%s}\n"${3});${4}
 snippet .
-	[${1}]${2}
+	->${1}
 snippet un
 	unsigned
