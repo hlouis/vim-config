@@ -83,6 +83,9 @@ if has("gui_running")
 	set lines=45
 endif
 
+" set path
+set path=.,include/*,head/*,../include/*,../head/*,,
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
