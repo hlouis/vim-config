@@ -665,3 +665,9 @@ let g:miniBufExplMaxSize = 2 " max display 2 line.
 " surround   ****************************************************************
 " http://www.vim.org/scripts/script.php?script_id=1697
 " ver: 1.90
+
+" supertab 	 ****************************************************************
+" http://www.vim.org/scripts/script.php?script_id=1643
+" ver: 1.0
+let g:SuperTabDefaultCompletionType = "context"
+
