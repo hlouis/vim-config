@@ -1010,9 +1010,14 @@ endfunction
 """"""""""""""""""""""""""
 " Shortcuts...
 """"""""""""""""""""""""""
-command! -nargs=0 Dox :AcpLock | :call <SID>DoxygenCommentFunc() | :AcpUnlock
-command! -nargs=0 DoxLic :AcpLock | :call <SID>DoxygenLicenseFunc() | :AcpUnlock
-command! -nargs=0 DoxAuthor :AcpLock | :call <SID>DoxygenAuthorFunc() | :AcpUnlock
-command! -nargs=1 DoxUndoc :AcpLock | :call <SID>DoxygenUndocumentFunc(<q-args>) | :AcpUnlock
-command! -nargs=0 DoxBlock :AcpLock | :call <SID>DoxygenBlockFunc() | :AcpUnlock
-
+command! -nargs=0 Dox :call <SID>DoxygenCommentFunc()
+command! -nargs=0 DoxLic :call <SID>DoxygenLicenseFunc()
+command! -nargs=0 DoxAuthor :call <SID>DoxygenAuthorFunc()
+command! -nargs=1 DoxUndoc :call <SID>DoxygenUndocumentFunc(<q-args>)
+command! -nargs=0 DoxBlock :call <SID>DoxygenBlockFunc()
+" with acp version
+" command! -nargs=0 Dox :AcpLock | :call <SID>DoxygenCommentFunc() | :AcpUnlock
+" command! -nargs=0 DoxLic :AcpLock | :call <SID>DoxygenLicenseFunc() | :AcpUnlock
+" command! -nargs=0 DoxAuthor :AcpLock | :call <SID>DoxygenAuthorFunc() | :AcpUnlock
+" command! -nargs=1 DoxUndoc :AcpLock | :call <SID>DoxygenUndocumentFunc(<q-args>) | :AcpUnlock
+" command! -nargs=0 DoxBlock :AcpLock | :call <SID>DoxygenBlockFunc() | :AcpUnlock
