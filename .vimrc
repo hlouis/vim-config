@@ -28,8 +28,13 @@ endif
 function! MySys()
     if (g:isWin)
         return "windows"
-    else
-        return "linux"
+	endif
+
+    if has("gui_macvim")
+		return "mac"
+	endif
+    
+	return "linux"
     endif
 endfunction
 
@@ -85,6 +90,14 @@ endif
 " set path
 set path=.,include/*,head/*,../include/*,../head/*,,
 
+if MySys() == "mac"
+	set noimd
+	if has("gui_running")
+		set imactivatekey=C-space
+		inoremap <ESC> <ESC>:set iminsert=2<CR>
+	endif
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -114,7 +127,7 @@ set t_vb=
 " Window split
 set equalalways " Multiple windows, when created, are equal in size
 set splitbelow splitright
- 
+
 "Vertical split then hop to new buffer
 :noremap <leader>v :vsp^M^W^W<cr>
 :noremap <leader>h :split^M^W^W<cr>
@@ -128,40 +141,40 @@ syntax enable "Enable syntax hl
 
 " Set font according to system
 if MySys() == "mac"
-  set gfn=Bitstream\ Vera\ Sans\ Mono:h13
-  set shell=/bin/bash
+	set gfn=Andale\ Mono:h14
+	set shell=/bin/zsh
 elseif MySys() == "windows"
-  set gfn=Envy_Code_R:h10
+	set gfn=Envy_Code_R:h10
 elseif MySys() == "linux"
-  set gfn=Envy\ Code\ R\ 10
-  set shell=/bin/bash
+	set gfn=Envy\ Code\ R\ 10
+	set shell=/bin/zsh
 endif
 
 if has("gui_running")
-  set guioptions-=T
-  set background=dark
-  set t_Co=256
-  set background=dark
-  colorscheme inkpot
-  set nu
+	set guioptions-=T
+	set background=dark
+	set t_Co=256
+	set background=dark
+	colorscheme inkpot
+	set nu
 else
-  colorscheme desert
-  set background=dark
-  set nonu
+	colorscheme desert
+	set background=dark
+	set nonu
 endif
 
 " Set utf-8 is the default encoding
 set fileencoding=utf-8
 " set fileencodings=ucs-bom,utf-8,gbk,gb2312,latin1,default
 if (g:isWin)
-    let &termencoding=&encoding " under win32 encoding is cp936
-    set fileencodings=utf8,cp936,ucs-bom,latin1
+	let &termencoding=&encoding " under win32 encoding is cp936
+	set fileencodings=utf8,cp936,ucs-bom,latin1
 else
-    set encoding=utf8
-    set fileencodings=utf8,gb2312,gb18030,ucs-bom,latin1
+	set encoding=utf8
+	set fileencodings=utf8,gb2312,gb18030,ucs-bom,latin1
 endif
 try
-    lang en_US
+	lang en_US
 catch
 endtry
 
@@ -187,9 +200,9 @@ autocmd BufNewFile,BufRead *.dox :set filetype=doxygen " define dox file as doxy
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
 autocmd BufReadPost *
-	\ if line("'\"") > 0 && line("'\"") <= line("$") |
-	\   exe "normal! g`\"" |
-	\ endif
+			\ if line("'\"") > 0 && line("'\"") <= line("$") |
+			\   exe "normal! g`\"" |
+			\ endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -225,29 +238,29 @@ vnoremap <silent> gv :call VisualSearch('gv')<CR>
 map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
 
 function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
+	exe "menu Foo.Bar :" . a:str
+	emenu Foo.Bar
+	unmenu Foo
 endfunction 
 
 " From an idea by Michael Naumann
 function! VisualSearch(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
+	let l:saved_reg = @"
+	execute "normal! vgvy"
 
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
+	let l:pattern = escape(@", '\\/.*$^~[]')
+	let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
+	if a:direction == 'b'
+		execute "normal ?" . l:pattern . "^M"
+	elseif a:direction == 'gv'
+		call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+	elseif a:direction == 'f'
+		execute "normal /" . l:pattern . "^M"
+	endif
 
-    let @/ = l:pattern
-    let @" = l:saved_reg
+	let @/ = l:pattern
+	let @" = l:saved_reg
 endfunction
 
 
@@ -273,29 +286,29 @@ cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 
 func! Cwd()
-  let cwd = getcwd()
-  return "e " . cwd 
+	let cwd = getcwd()
+	return "e " . cwd 
 endfunc
 
 func! DeleteTillSlash()
-  let g:cmd = getcmdline()
-  if MySys() == "linux" || MySys() == "mac"
-    let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*", "\\1", "")
-  else
-    let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\]\\).*", "\\1", "")
-  endif
-  if g:cmd == g:cmd_edited
-    if MySys() == "linux" || MySys() == "mac"
-      let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*/", "\\1", "")
-    else
-      let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\\]\\).*\[\\\\\]", "\\1", "")
-    endif
-  endif   
-  return g:cmd_edited
+	let g:cmd = getcmdline()
+	if MySys() == "linux" || MySys() == "mac"
+		let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*", "\\1", "")
+	else
+		let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\]\\).*", "\\1", "")
+	endif
+	if g:cmd == g:cmd_edited
+		if MySys() == "linux" || MySys() == "mac"
+			let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*/", "\\1", "")
+		else
+			let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\\]\\).*\[\\\\\]", "\\1", "")
+		endif
+	endif   
+	return g:cmd_edited
 endfunc
 
 func! CurrentFileDir(cmd)
-  return a:cmd . " " . expand("%:p:h") . "/"
+	return a:cmd . " " . expand("%:p:h") . "/"
 endfunc
 
 
@@ -326,6 +339,12 @@ map <leader>tn :tabnew %<cr>
 map <leader>te :tabedit 
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
+map <leader>t1 :tabnext 1<cr>
+map <leader>t2 :tabnext 2<cr>
+map <leader>t3 :tabnext 3<cr>
+map <leader>t4 :tabnext 4<cr>
+map <leader>t5 :tabnext 5<cr>
+map <leader>t6 :tabnext 6<cr>
 
 " switch tabs by tab and numbers
 map <A-1> :tabnext 1<cr>
@@ -352,28 +371,28 @@ map <leader>cd :cd %:p:h<cr>
 
 command! Bclose call <SID>BufcloseCloseIt()
 function! <SID>BufcloseCloseIt()
-   let l:currentBufNum = bufnr("%")
-   let l:alternateBufNum = bufnr("#")
+	let l:currentBufNum = bufnr("%")
+	let l:alternateBufNum = bufnr("#")
 
-   if buflisted(l:alternateBufNum)
-     buffer #
-   else
-     bnext
-   endif
+	if buflisted(l:alternateBufNum)
+		buffer #
+	else
+		bnext
+	endif
 
-   if bufnr("%") == l:currentBufNum
-     new
-   endif
+	if bufnr("%") == l:currentBufNum
+		new
+	endif
 
-   if buflisted(l:currentBufNum)
-     execute("bdelete! ".l:currentBufNum)
-   endif
+	if buflisted(l:currentBufNum)
+		execute("bdelete! ".l:currentBufNum)
+	endif
 endfunction
 
 " Specify the behavior when switching between buffers 
 try
-  set switchbuf=usetab
-  set stal=2
+	set switchbuf=usetab
+	set stal=2
 catch
 endtry
 
@@ -389,8 +408,8 @@ set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 
 
 function! CurDir()
-    let curdir = substitute(getcwd(), $HOME, "~/", "g")
-    return curdir
+	let curdir = substitute(getcwd(), $HOME, "~/", "g")
+	return curdir
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -430,22 +449,22 @@ vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 if MySys() == "mac"
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
+	nmap <D-j> <M-j>
+	nmap <D-k> <M-k>
+	vmap <D-j> <M-j>
+	vmap <D-k> <M-k>
 endif
 
 "Delete trailing white space, useful for Python ;)
 func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
+	exe "normal mz"
+	%s/\s\+$//ge
+	exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 
 " Professor VIM says '87% of users prefer jj over esc', jj abrams strongly disagrees
-imap jj <Esc>
+imap ,, <Esc>
 " awesome, inserts new line without going into insert mode
 map <C-Enter> O<ESC>
 map <S-Enter> o<ESC>
@@ -539,14 +558,14 @@ au FileType javascript inoremap <buffer> $r return
 au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
 
 function! JavaScriptFold() 
-    setl foldmethod=syntax
-    setl foldlevelstart=1
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+	setl foldmethod=syntax
+	setl foldlevelstart=1
+	syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
 
-    function! FoldText()
-    return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
+	function! FoldText()
+		return substitute(getline(v:foldstart), '{.*', '{...}', '')
+	endfunction
+	setl foldtext=FoldText()
 endfunction
 
 """"""""""""""""""""""""""""""
@@ -580,7 +599,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 "autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 "autocmd FileType c set omnifunc=ccomplete#Complete
 " 
- 
+
 " EnhancedCommentify **********************************************************
 " http://www.vim.org/scripts/script.php?script_id=23
 " ver 2.3
@@ -615,18 +634,18 @@ let g:snips_company = "YQIdea"
 let g:snips_email = "louis.huang@yqidea.com"
 
 function! ReloadSnippets( snippets_dir, ft )
-    if strlen( a:ft ) == 0
-        let filetype = "_"
-    else
-        let filetype = a:ft
-    endif
+	if strlen( a:ft ) == 0
+		let filetype = "_"
+	else
+		let filetype = a:ft
+	endif
 
-    call ResetSnippets()
-    call GetSnippets( a:snippets_dir, filetype )
+	call ResetSnippets()
+	call GetSnippets( a:snippets_dir, filetype )
 endfunction
 
 nmap <silent> <leader>sr :call ReloadSnippets(snippets_dir, &filetype)<CR>
- 
+
 " Fuzzyfinder *****************************************************************
 " http://www.vim.org/scripts/script.php?script_id=1984
 " ver 3.5
@@ -637,20 +656,20 @@ map <leader>ff :FufFile<CR>
 map <leader>fb :FufBuffer<CR>
 map <leader>ft :FufTag!<CR>
 map <leader>fm :FufMruFile!<CR>
- 
+
 try
-    call fuf#defineLaunchCommand('FufCWD', 'file', 'fnamemodify(getcwd(), ''%:p:h'')')
-    map <leader>ft :FufCWD **/<CR>
+	call fuf#defineLaunchCommand('FufCWD', 'file', 'fnamemodify(getcwd(), ''%:p:h'')')
+	map <leader>ft :FufCWD **/<CR>
 catch
 endtry
- 
+
 " autocomplpop ***************************************************************
 " http://www.vim.org/scripts/script.php?script_id=1879
 " ver 2.14.1
 let g:acp_enableAtStartup = 1
 let g:acp_ignorecaseOption = 1
 let g:acp_mappingDriven = 1
- 
+
 " a.vim **********************************************************************
 let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../../head/core'
 
