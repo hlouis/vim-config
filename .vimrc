@@ -94,7 +94,7 @@ if MySys() == "mac"
 	set noimd
 	if has("gui_running")
 		set imactivatekey=C-space
-		inoremap <ESC> <ESC>:set iminsert=2<CR>
+		inoremap <ESC> <ESC>:set iminsert=1<CR>
 	endif
 endif
 
@@ -671,7 +671,7 @@ let g:acp_ignorecaseOption = 1
 let g:acp_mappingDriven = 1
 
 " a.vim **********************************************************************
-let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../../head/core'
+let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../head'
 
 " minibufexpl ****************************************************************
 let g:miniBufExplSplitBelow = 0 " mini buf window will apear above.
