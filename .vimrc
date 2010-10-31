@@ -671,7 +671,7 @@ let g:acp_ignorecaseOption = 1
 let g:acp_mappingDriven = 1
 
 " a.vim **********************************************************************
-let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../head'
+let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../../head/core:../sdk:../head'
 
 " minibufexpl ****************************************************************
 let g:miniBufExplSplitBelow = 0 " mini buf window will apear above.
