@@ -25,3 +25,5 @@
 	tool = gvimdiff
 [difftool "gvimdiff"]
 	cmd = vimdiffwrapper.sh
+[guitool "Pull"]
+	cmd = git pull

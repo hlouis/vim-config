@@ -155,7 +155,8 @@ if has("gui_running")
 	set background=dark
 	set t_Co=256
 	set background=dark
-	colorscheme inkpot
+	" colorscheme inkpot
+	colorscheme desertEx
 	set nu
 else
 	colorscheme desert
