@@ -19,6 +19,14 @@
 "    -> Python section
 "    -> JavaScript section
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Open pathogen plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+
 if (has("win32") || has("win64") || has("win32unix"))
     let g:isWin = 1
 else
