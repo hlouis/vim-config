@@ -70,16 +70,16 @@ nmap <leader>w :w!<cr>
 
 " Fast editing of the .vimrc
 if g:isWin == 1
-	map <leader>e :e! d:\develop\Vim\vimfiles\.vimrc<cr>
+	map <leader>e :e! d:\develop\Vim\vimfiles\vimrc<cr>
 else
-	map <leader>e :e! ~/.vim/.vimrc<cr>
+	map <leader>e :e! ~/.vim/vimrc<cr>
 endif
 
 " When vimrc is edited, reload it
 if g:isWin == 1
-	autocmd! bufwritepost .vimrc source $VIM/vimfiles/.vimrc
+	autocmd! bufwritepost .vimrc source $VIM/vimfiles/vimrc
 else
-	autocmd! bufwritepost .vimrc source ~/.vim/.vimrc
+	autocmd! bufwritepost .vimrc source ~/.vim/vimrc
 endif
 
 " Sets what is saved when you save a session
@@ -696,5 +696,5 @@ let g:miniBufExplMaxSize = 2 " max display 2 line.
 " supertab 	 ****************************************************************
 " http://www.vim.org/scripts/script.php?script_id=1643
 " ver: 1.0
-let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabDefaultCompletionType = "context"
 
