@@ -10,3 +10,12 @@
 [submodule "bundle/L9"]
 	path = bundle/L9
 	url = http://github.com/vim-scripts/L9.git
+[submodule "bundle/a"]
+	path = bundle/a
+	url = http://github.com/vim-scripts/a.vim.git
+[submodule "bundle/SuperTab"]
+	path = bundle/SuperTab
+	url = http://github.com/vim-scripts/SuperTab.git
+[submodule "bundle/TheNERDTree"]
+	path = bundle/TheNERDTree
+	url = http://github.com/vim-scripts/The-NERD-tree.git
