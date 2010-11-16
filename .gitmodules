@@ -4,3 +4,9 @@
 [submodule "bundle/snipMate"]
 	path = bundle/snipMate
 	url = http://github.com/vim-scripts/snipMate.git
+[submodule "bundle/FuzzyFinder"]
+	path = bundle/FuzzyFinder
+	url = http://github.com/vim-scripts/FuzzyFinder.git
+[submodule "bundle/L9"]
+	path = bundle/L9
+	url = http://github.com/vim-scripts/L9.git
