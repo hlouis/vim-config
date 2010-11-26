@@ -6,7 +6,7 @@
 	url = http://github.com/vim-scripts/snipMate.git
 [submodule "bundle/FuzzyFinder"]
 	path = bundle/FuzzyFinder
-	url = https://hlouis@github.com/hlouis/FuzzyFinder.git
+	url = http://github.com/hlouis/FuzzyFinder.git
 [submodule "bundle/L9"]
 	path = bundle/L9
 	url = http://github.com/vim-scripts/L9.git
@@ -33,4 +33,4 @@
 	url = http://github.com/vim-scripts/HTML-AutoCloseTag.git
 [submodule "bundle/actionscript"]
 	path = bundle/actionscript
-	url = https://github.com/vim-scripts/actionscript.vim--Cuss.git
+	url = http://github.com/vim-scripts/actionscript.vim--Cuss.git
