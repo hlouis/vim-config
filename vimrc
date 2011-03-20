@@ -149,7 +149,8 @@ syntax enable "Enable syntax hl
 
 " Set font according to system
 if MySys() == "mac"
-	set gfn=Andale\ Mono:h14
+	"set gfn=Andale\ Mono:h14
+	set gfn=Envy\ Code\ R:h13
 	set shell=/bin/zsh
 elseif MySys() == "windows"
 	set gfn=Envy_Code_R:h10
