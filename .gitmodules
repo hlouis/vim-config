@@ -34,3 +34,6 @@
 [submodule "bundle/actionscript"]
 	path = bundle/actionscript
 	url = http://github.com/vim-scripts/actionscript.vim--Cuss.git
+[submodule "bundle/Son-of-Obisidian"]
+	path = bundle/Son-of-Obisidian
+	url = http://github.com/vim-scripts/Son-of-Obisidian.git
