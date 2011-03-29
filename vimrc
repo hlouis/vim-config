@@ -56,6 +56,7 @@ set history=300
 " Enable filetype plugin
 filetype plugin on
 filetype indent on
+set modeline
 
 " Set to auto read when a file is changed from the outside
 set autoread
