@@ -604,9 +604,13 @@ map <leader>q :e ~/buffer<cr>
 " -----------------------------------------------------------------------------  
 "
 " XPTemplate ******************************************************************
-let g:xptemplate_always_show_pum = 1
-let g:xptemplate_fallback = '<C-n>'
+"let g:xptemplate_always_show_pum = 1
+" xpt uses <Tab> as trigger key
+let g:xptemplate_key = '<Tab>'
+" if nothing matched in xpt, try supertab
+let g:xptemplate_fallback = '<Plug>SuperTabForward'
 let g:xptemplate_highlight = 'following,next'
+"let g:xptemplate_bundle = 'c_*,cpp_*' 
 
 " Omni Completion *************************************************************
 " http://www.vim.org/scripts/script.php?script_id=1520
