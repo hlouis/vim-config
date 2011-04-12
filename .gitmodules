@@ -37,3 +37,6 @@
 [submodule "bundle/Son-of-Obisidian"]
 	path = bundle/Son-of-Obisidian
 	url = http://github.com/vim-scripts/Son-of-Obisidian.git
+[submodule "bundle/xpt"]
+	path = bundle/xpt
+	url = http://github.com/vim-scripts/xptemplate.git

@@ -23,6 +23,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Open pathogen plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
+filetype off
+let g:pathogen_disabled = ["snipMate"]
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -54,6 +57,7 @@ endfunction
 set history=300
 
 " Enable filetype plugin
+filetype on
 filetype plugin on
 filetype indent on
 set modeline
