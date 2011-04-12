@@ -602,6 +602,11 @@ map <leader>q :e ~/buffer<cr>
 " -----------------------------------------------------------------------------  
 " |                              Pluggins                                     |
 " -----------------------------------------------------------------------------  
+"
+" XPTemplate ******************************************************************
+let g:xptemplate_always_show_pum = 1
+let g:xptemplate_fallback = '<C-n>'
+let g:xptemplate_highlight = 'following,next'
 
 " Omni Completion *************************************************************
 " http://www.vim.org/scripts/script.php?script_id=1520
