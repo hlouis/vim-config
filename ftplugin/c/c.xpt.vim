@@ -24,3 +24,21 @@ XSET symbol|post=UpperCase(V())
 
 `cursor^
 #endif `$CL^ `symbol^ `$CR^
+
+XPT filehead
+XSET cursor|pre=CURSOR
+/********************************************************************
+created:	`strftime("%Y/%m/%d")^
+@author:	`$author^ | `$email^
+Copyright:	This software is supplied under the terms of a license
+			agreement or nondisclosure agreement with YQIdea and may
+			not be copied or disclosed except in accordance with the
+			terms of that agreement.
+			`strftime("%Y")^ YQidea.com All Rights Reserved.
+
+purpose:	`cursor^
+*********************************************************************/	
+
+..XPT
+
+XPT /*-

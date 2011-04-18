@@ -604,7 +604,7 @@ map <leader>q :e ~/buffer<cr>
 " -----------------------------------------------------------------------------  
 "
 " XPTemplate ******************************************************************
-"let g:xptemplate_always_show_pum = 1
+let g:xptemplate_always_show_pum = 1
 " xpt uses <Tab> as trigger key
 let g:xptemplate_key = '<Tab>'
 " if nothing matched in xpt, try supertab
