@@ -40,3 +40,6 @@
 [submodule "bundle/xpt"]
 	path = bundle/xpt
 	url = http://github.com/vim-scripts/xptemplate.git
+[submodule "bundle/cscope_macros"]
+	path = bundle/cscope_macros
+	url = http://github.com/vim-scripts/cscope_macros.vim.git

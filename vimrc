@@ -75,7 +75,7 @@ nmap <leader>w :w!<cr>
 
 " Fast editing of the .vimrc
 if g:isWin == 1
-	map <leader>e :e! d:\develop\Vim\vimfiles\vimrc<cr>
+	map <leader>e :e! ~/vimfiles/vimrc<cr>
 else
 	map <leader>e :e! ~/.vim/vimrc<cr>
 endif
@@ -497,9 +497,15 @@ map <S-Enter> o<ESC>
 " => Cope
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Do :help cope if you are unsure what cope is. It's super useful!
-map <leader>cc :botright cope<cr>
-map <leader>cn :cn<cr>
-map <leader>cp :cp<cr>
+map <leader>qc :botright cope<cr>
+map <leader>qn :cn<cr>
+map <leader>qp :cp<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Cscope
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" use quick fix window for cscope output
+set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 
 """"""""""""""""""""""""""""""
@@ -595,9 +601,6 @@ set grepprg=/bin/grep\ -nH
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-"Quickly open a buffer for scripbble
-map <leader>q :e ~/buffer<cr>
 
 " -----------------------------------------------------------------------------  
 " |                              Pluggins                                     |
