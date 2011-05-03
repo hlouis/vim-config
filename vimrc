@@ -544,6 +544,11 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
+""""""""""""""""""""""""""""""
+" => Restructure text section
+""""""""""""""""""""""""""""""
+au BufNewFile,BufRead *.rest set syntax=rest
+au BufNewFile,BufRead *.rest set ft=rest
 
 """"""""""""""""""""""""""""""
 " => Python section
