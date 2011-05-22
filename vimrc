@@ -103,13 +103,13 @@ endif
 " set path
 set path=.,include/*,head/*,../include/*,../head/*,,
 
-if MySys() == "mac"
-	set noimd
-	if has("gui_running")
-		set imactivatekey=C-space
-		inoremap <ESC> <ESC>:set iminsert=1<CR>
-	endif
-endif
+"if MySys() == "mac"
+	"set noimd
+	"if has("gui_running")
+		"set imactivatekey=C-space
+		"inoremap <ESC> <ESC>:set iminsert=1<CR>
+	"endif
+"endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -381,6 +381,28 @@ map! <A-7> <Esc>:tabnext 7<cr>
 map! <A-8> <Esc>:tabnext 8<cr>
 map! <A-9> <Esc>:tabnext 9<cr>
 
+" switch tabs by tab and numbers by mac command key
+if MySys() == "mac"
+	map <D-1> :tabnext 1<cr>
+	map <D-2> :tabnext 2<cr>
+	map <D-3> :tabnext 3<cr>
+	map <D-4> :tabnext 4<cr>
+	map <D-5> :tabnext 5<cr>
+	map <D-6> :tabnext 6<cr>
+	map <D-7> :tabnext 7<cr>
+	map <D-8> :tabnext 8<cr>
+	map <D-9> :tabnext 9<cr>
+	map! <D-1> <Esc>:tabnext 1<cr>
+	map! <D-2> <Esc>:tabnext 2<cr>
+	map! <D-3> <Esc>:tabnext 3<cr>
+	map! <D-4> <Esc>:tabnext 4<cr>
+	map! <D-5> <Esc>:tabnext 5<cr>
+	map! <D-6> <Esc>:tabnext 6<cr>
+	map! <D-7> <Esc>:tabnext 7<cr>
+	map! <D-8> <Esc>:tabnext 8<cr>
+	map! <D-9> <Esc>:tabnext 9<cr>
+endif
+
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
 
@@ -483,6 +505,10 @@ imap ,, <Esc>
 " awesome, inserts new line without going into insert mode
 map <C-Enter> O<ESC>
 map <S-Enter> o<ESC>
+
+" Move cursor to line end or begin in insert mode
+imap <C-e> <esc>$a
+imap <C-a> <esc>$I
 
 " Make cursor move by visual lines instead of file lines (when wrapping)
 "map <up> gk
@@ -619,6 +645,7 @@ let g:xptemplate_key = '<Tab>'
 let g:xptemplate_fallback = '<Plug>SuperTabForward'
 let g:xptemplate_highlight = 'following,next'
 "let g:xptemplate_bundle = 'c_*,cpp_*' 
+let g:xptemplate_brace_complete = '([{"'
 
 " Omni Completion *************************************************************
 " http://www.vim.org/scripts/script.php?script_id=1520
