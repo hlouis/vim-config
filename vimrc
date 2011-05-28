@@ -571,6 +571,11 @@ map <leader>sa zg
 map <leader>s? z=
 
 """"""""""""""""""""""""""""""
+" => Protobuf text section
+""""""""""""""""""""""""""""""
+au! BufNewFile,BufRead *.proto setfiletype proto
+
+""""""""""""""""""""""""""""""
 " => Restructure text section
 """"""""""""""""""""""""""""""
 au BufNewFile,BufRead *.rest set syntax=rest
