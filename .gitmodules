@@ -43,3 +43,6 @@
 [submodule "bundle/cscope_macros"]
 	path = bundle/cscope_macros
 	url = http://github.com/vim-scripts/cscope_macros.vim.git
+[submodule "bundle/EasyGrep"]
+	path = bundle/EasyGrep
+	url = http://github.com/vim-scripts/EasyGrep.git
