@@ -101,7 +101,7 @@ if has("gui_running")
 endif
 
 " set path
-set path=.,include/*,head/*,../include/*,../head/*,,
+set path=.,../sdk/*,../head/*,include/*,head/*,../include/*,../head/*,,
 
 if MySys() == "mac"
 	set noimd
