@@ -673,7 +673,7 @@ let g:EnhCommentifyPretty = 'Yes'
 " NERDTree ********************************************************************
 " http://www.vim.org/scripts/script.php?script_id=1658
 " ver 4.1.0
-let g:NERDTreeIgnore=['\~$', '\.o$', 'tags', 'cscope\.']
+let g:NERDTreeIgnore=['\~$', '\.lo$', '\.o$', 'tags', 'cscope\.']
 let g:NERDTreeWinPos="left"
 nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
 nnoremap <silent> <leader>nc :call NERDTreeCurrentDir()<CR>
