@@ -104,11 +104,13 @@ endif
 set path=.,../sdk/*,../head/*,include/*,head/*,../include/*,../head/*,,
 
 "if MySys() == "mac"
-	"set noimd
-	"if has("gui_running")
+	set noimd			" auto switch im between modes.
+	if has("gui_running")
+		" imactivatekey is useless under mac vim
 		"set imactivatekey=C-space
-		"inoremap <ESC> <ESC>:set iminsert=1<CR>
-	"endif
+		set imi=2		" open im in insert mode
+		set ims=0		" disable im in search mode
+	endif
 "endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -155,7 +157,8 @@ syntax enable "Enable syntax hl
 " Set font according to system
 if MySys() == "mac"
 	"set gfn=Andale\ Mono:h14
-	set gfn=Envy\ Code\ R:h13
+	"set gfn=Envy\ Code\ R:h13
+	set gfn=Inconsolata:h13
 	set shell=/bin/zsh
 elseif MySys() == "windows"
 	set gfn=Envy_Code_R:h10
@@ -525,7 +528,8 @@ imap <C-a> <esc>$I
 " Do :help cope if you are unsure what cope is. It's super useful!
 map <leader>qc :botright cope<cr>
 map <leader>qn :cn<cr>
-map <leader>qp :cp<cr>
+map <C-N> :cn<cr>
+map <C-P> :cp<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Cscope
@@ -736,6 +740,9 @@ let g:acp_mappingDriven = 1
 
 " a.vim **********************************************************************
 let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../../head/core:../sdk:../head'
+
+" EasyGrep ********************************************************************
+let g:EasyGrepMode = 2
 
 " minibufexpl ****************************************************************
 let g:miniBufExplSplitBelow = 0 " mini buf window will apear above.
