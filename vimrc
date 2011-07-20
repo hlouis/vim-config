@@ -149,6 +149,9 @@ set splitbelow splitright
 set cursorline	"hightlight current line
 "set cursorcolumn "hightlight current column
 
+" set ESC to hide highlight in normal mode
+:noremap <ESC> :nohl<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors Fonts and Encodings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
