@@ -46,3 +46,6 @@
 [submodule "bundle/EasyGrep"]
 	path = bundle/EasyGrep
 	url = http://github.com/vim-scripts/EasyGrep.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = http://github.com/vim-scripts/Tagbar.git
