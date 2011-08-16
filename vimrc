@@ -150,7 +150,7 @@ set cursorline	"hightlight current line
 "set cursorcolumn "hightlight current column
 
 " set ESC to hide highlight in normal mode
-:noremap <ESC> :nohl<cr>
+":noremap <ESC> :nohl<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors Fonts and Encodings
@@ -757,6 +757,11 @@ let g:miniBufExplMaxSize = 2 " max display 2 line.
 " surround   ****************************************************************
 " http://www.vim.org/scripts/script.php?script_id=1697
 " ver: 1.90
+
+" tagbar     ****************************************************************
+let g:tagbar_ctags_bin = '/opt/local/bin/ctags'
+let g:tagbar_autoshowtag = 1
+nnoremap <leader>tt :TagbarToggle<CR>
 
 " supertab 	 ****************************************************************
 " http://www.vim.org/scripts/script.php?script_id=1643
