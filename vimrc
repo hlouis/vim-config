@@ -160,8 +160,9 @@ syntax enable "Enable syntax hl
 " Set font according to system
 if MySys() == "mac"
 	"set gfn=Andale\ Mono:h14
-	"set gfn=Envy\ Code\ R:h13
-	set gfn=Inconsolata:h13
+	set gfn=Envy\ Code\ R:h13
+	"set gfn=Inconsolata:h13
+	set noantialias
 	set shell=/bin/zsh
 elseif MySys() == "windows"
 	set gfn=Envy_Code_R:h10
@@ -175,8 +176,8 @@ if has("gui_running")
 	set background=dark
 	set t_Co=256
 	set background=dark
-	" colorscheme inkpot
-	colorscheme desertEx
+	colorscheme inkpot
+	"colorscheme desertEx
 	set nu
 else
 	colorscheme desert
